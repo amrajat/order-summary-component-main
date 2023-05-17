@@ -1,0 +1,209 @@
+:root {
+  /* Primary Colors */
+  --color-primary-pale-blue: hsl(225, 100%, 94%);
+  --color-primary-bright-blue: hsl(245, 75%, 52%);
+
+  /* Neutral Colors */
+  --color-neutral-very-pale-blue: hsl(225, 100%, 98%);
+  --color-neutral-des-blue: hsl(224, 23%, 55%);
+  --color-neutral-dark-blue: hsl(223, 47%, 23%);
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Fraunces", serif;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 1.6rem;
+  color: var(--color-neutral-des-blue);
+
+  display: grid;
+  grid-template-columns: 1fr minmax(min-content, 30rem) 1fr;
+  grid-template-rows: 1fr max-content 1fr;
+
+  background: url(./images/pattern-background-desktop.svg),
+    var(--color-primary-pale-blue);
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 100vh;
+}
+
+.order {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 1.6rem;
+  box-shadow: 0 2rem 4rem rgb(114, 128, 167, 0.5);
+}
+
+.order__summary {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  background-color: #fff;
+}
+
+.order__title {
+  text-align: center;
+  font-weight: 900;
+  font-size: 2.4rem;
+  color: var(--color-neutral-dark-blue);
+}
+
+.order__description {
+  text-align: center;
+}
+.order__details {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem;
+  gap: 2rem;
+  font-size: 1.4rem;
+  background-color: hsl(225, 100%, 98%);
+  border-radius: 1rem;
+}
+
+.order__details--icon {
+  width: 4.2rem;
+  height: 4.2rem;
+}
+
+.order__plans {
+  margin-right: auto;
+}
+
+.order__plans--pricing {
+  color: var(--color-neutral-des-blue);
+}
+
+.order__plans--term {
+  font-weight: 700;
+  color: var(--color-neutral-dark-blue);
+}
+
+.order__change--plan:link,
+.order__change--plan:visited {
+  text-decoration: underline;
+  font-weight: 700;
+  color: var(--color-primary-bright-blue);
+}
+
+.order__change--plan:hover,
+.order__change--plan:active {
+  text-decoration: none;
+  color: var(--color-neutral-des-blue);
+}
+
+.order__cancel:link,
+.order__cancel:visited {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  color: currentColor;
+  font-size: 1.4rem;
+  align-self: center;
+}
+
+.order__cancel:hover,
+.order__cancel:active {
+  color: var(--color-primary-bright-blue);
+}
+
+button {
+  border: 0;
+  background-color: var(--color-primary-bright-blue);
+  padding: 0.8rem 1.4rem;
+  border-radius: 1rem;
+  border: 0;
+  color: var(--color-neutral-very-pale-blue);
+  box-shadow: 0 1rem 2rem rgb(114, 128, 167, 0.5);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+button:hover,
+button:active {
+  opacity: 0.7;
+}
+
+.attribution {
+  grid-column: 1 / -1;
+  grid-row: 3 / -1;
+  align-self: self-end;
+  justify-self: center;
+}
